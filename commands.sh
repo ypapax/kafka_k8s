@@ -5,6 +5,11 @@ zoo(){
 	kubectl create --filename ./zookeeper.yml
 }
 
+zoo_service(){
+	kubectl create --filename ./zookeeper-service.yml
+}
+
+
 kafka_service(){
 	kubectl create -f ./kafka-service.yml
 }
