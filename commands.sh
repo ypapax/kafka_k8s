@@ -9,6 +9,10 @@ kafka_service(){
 	kubectl create -f ./kafka-service.yml
 }
 
+delete_kafka_service(){
+	kubectl delete -f ./kafka-service.yml
+}
+
 kafka_cluster(){
 	kubectl create -f ./kafka-cluster.yml
 }

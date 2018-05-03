@@ -14,3 +14,5 @@ spec:
     app: kafka
     id: "1"
   type: LoadBalancer
+  externalIPs:
+        - 192.168.0.107
