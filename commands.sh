@@ -32,4 +32,8 @@ publish(){
 	tail -f /var/log/system.log | kafkacat -b $EXTERNAL_IP:9092 -t topic1
 }
 
+consume(){
+	kafkacat -b $EXTERNAL_IP:9092 -t topic1
+}
+
 $@
