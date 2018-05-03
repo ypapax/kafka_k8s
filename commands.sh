@@ -22,6 +22,10 @@ kafka_cluster(){
 	kubectl create -f ./kafka-cluster.yml
 }
 
+delete_kafka_cluster(){
+	kubectl delete -f ./kafka-cluster.yml
+}
+
 EXTERNAL_IP=192.168.0.107
 
 publish(){
