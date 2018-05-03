@@ -32,6 +32,10 @@ publish(){
 	tail -f /var/log/system.log | kafkacat -b $EXTERNAL_IP:9092 -t topic1
 }
 
+publish_tee(){ # https://unix.stackexchange.com/questions/273118/direct-output-to-pipe-and-stdout#comment474127_273126
+	tail -f /var/log/system.log | tee /dev/tty | kafkacat -b $EXTERNAL_IP:9092 -t topic1
+}
+
 consume(){
 	kafkacat -b $EXTERNAL_IP:9092 -t topic1
 }
