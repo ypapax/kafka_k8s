@@ -17,4 +17,10 @@ kafka_cluster(){
 	kubectl create -f ./kafka-cluster.yml
 }
 
+EXTERNAL_IP=192.168.0.107
+
+publish(){
+	tail -f /var/log/system.log | kafkacat -b $EXTERNAL_IP:9092 -t topic1
+}
+
 $@
